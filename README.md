@@ -16,7 +16,7 @@ Core Logic
 - Calculates three key performance metrics:
   - ROC-AUC: Area under the Receiver Operating Characteristic curve
   - PR-AUC: Area under the Precision-Recall curve
-  - F1 Score: Harmonic mean of precision and recall under an optimized theshold
+  - F1 Score: Harmonic mean of precision and recall under an optimized threshold
 - A composite score is created, adding all 3 of the above, used to monitor peak performance
 - Obtains feature importance rankings using the trained base classifier
 
@@ -31,7 +31,7 @@ The algorithm iteratively removes the least important features while monitoring 
 4. Stopping Criteria
 The algorithm employs multiple safeguards to prevent over-pruning:
 - Performance Break: Stops if any individual metric drops by more than 1% from baseline
-- Early Stopping: Uses patience mechanism to halt when performance does not improve past a certain amount of iterations (default: 3 iterations) 
+- Early Stopping: Uses patience mechanism to halt when performance does not improve for a specified number of iterations (default: 3 iterations) 
 
 5. Output
 Returns the optimal feature list that maximizes model performance while maintaining statistical rigor through cross-validation.
@@ -48,9 +48,6 @@ from xgboost import XGBClassifier  # can be any classifier you want
 # these are just to unpack / load the dataset 
 from pathlib import Path
 import pickle as pkl
-
-# NOTE: currently only works for classifiers containing feature_importances_ attribute!
-# Future improvements would be to apply this to other classifiers such as Linear models, NNs .etc.
 
 def refine_features():
     classifier = XGBClassifier()  # load up base model
@@ -72,3 +69,6 @@ def refine_features():
 
 refine_features()
 ```
+
+NOTE: currently only works for classifiers containing feature_importances_ attribute!
+Future improvements would be to apply this to other classifiers such as Linear models, NNs .etc.
