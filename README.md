@@ -42,7 +42,7 @@ Before model hyperparameter optimization, which can be an extensively long proce
 This demonstration is also included in the project files.
 ```python
 from DataSift import DataSift
-from xgboost import XGBClassifier  # can be any classifier you want
+from xgboost import XGBClassifier  # can be any classifier you want with a feature_importances_ attribute
 
 # these are just to unpack / load the dataset 
 from pathlib import Path
