@@ -5,7 +5,6 @@ A binary classifier efficiency enhancement tool. Optimizes feature selection wit
 ### *Algorithm Logic*
 DataSift implements an intelligent backward elimination feature selection algorithm designed to optimize model performance through informed feature pruning. The algorithm combines statistical preprocessing with iterative performance monitoring to identify the optimal feature subset.
 
-Core Logic
 1. Preprocessing / Setup Phase
 - Variance Filtering: Removes features with variance below a specified threshold (default: 0.1) to eliminate near-constant variables
 - Data Preparation: Converts all features to numeric format and creates stratified train-test splits
