@@ -21,19 +21,19 @@ DataSift implements an intelligent backward elimination feature selection algori
 
 
 3. Backward Elimination Process
-The algorithm iteratively removes the least important features while monitoring performance:
+- The algorithm iteratively removes the least important features while monitoring performance:
 - Sequential Removal: Features are eliminated one by one, starting with the lowest importance
 - Performance Tracking: After each removal, the model is trained on the newly pruned dataset and the algorithm recalculates all three metrics via cross-validation
 - Composite Scores are monitored as a performance indicator
 - Best Feature Set Tracking: Continuously tracks the feature subset yielding the highest composite score
 
 4. Stopping Criteria
-The algorithm employs multiple safeguards to prevent over-pruning:
+- The algorithm employs multiple safeguards to prevent over-pruning:
 - Performance Break: Stops if any individual metric drops by more than 1% from baseline
 - Early Stopping: Uses patience mechanism to halt when performance does not improve for a specified number of iterations (default: 3 iterations) 
 
 5. Output
-Returns the optimal feature list that maximizes model performance while maintaining statistical rigor through cross-validation.
+- Returns the optimal feature list that maximizes model performance while maintaining statistical rigor through cross-validation.
 
 Before model hyperparameter optimization, which can be an extensively long process, users can run this program as such to simultaneously reduce the amount of data each model must process and increase its performance by eliminating "confusing" and "noisy" features.
 
