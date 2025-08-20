@@ -82,10 +82,10 @@ class DataSift:
         feature_list = FeatImp_df['Feature'].to_list()
 
         best_features = []
-        best_roc = 0
-        best_prc = 0
-        best_f1 = 0
-        best_composite = best_roc + best_prc + best_f1
+        best_roc = base_roc
+        best_prc = base_prc
+        best_f1 = base_roc
+        best_composite = base_composite
 
         best_idx = 0
         early_stop_counter = 0
@@ -102,26 +102,19 @@ class DataSift:
                 print(f"[|Performance break encountered|]: returning optimal feature list with the following metrics"
                       f"Composite: {new_composite} | ROC_AUC {new_roc} | PR_AUC {new_prc} | F1 {new_f1}")
                 break
-            elif new_composite > base_composite:  # check if it is better than the base stats and override them if so
+            elif new_composite > best_composite:  # check if it is better than the best stats and overwrite them
                 best_features = new_feature_list
                 best_roc = new_roc
                 best_prc = new_prc
                 best_f1 = new_f1
-                best_composite = best_roc + best_prc + best_f1
-                best_idx = feature_removal_count
-            elif new_composite > best_composite:  # now check if it is better than the best stats and overwrite them
-                best_features = new_feature_list
-                best_roc = new_roc
-                best_prc = new_prc
-                best_f1 = new_f1
-                best_composite = best_roc + best_prc + best_f1
+                best_composite = new_composite
                 best_idx = feature_removal_count
                 early_stop_counter = 0
             else:
                 early_stop_counter += 1
 
             # status check per iteration
-            print(f"[{feature_removal_count}] Composite: {new_composite} | ROC_AUC {new_roc} | PR_AUC {new_prc} | F1 {new_f1} | Best_idx = {best_idx}")
+            print(f"[{feature_removal_count}] Composite: {new_composite:.5f} | ROC_AUC {new_roc:.5f} | PR_AUC {new_prc:.5f} | F1 {new_f1:.5f} | Best_idx = {best_idx}")
 
             if best_features and early_stop_counter == self.patience:
                 print(f"[|Patience threshold exceeded|]: breaking early with the following stats & returning optimal feature list:"
