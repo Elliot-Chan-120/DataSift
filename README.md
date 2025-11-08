@@ -10,7 +10,7 @@ This is my own personal research helper module, and is more of a concept to help
 
 [Nov 8 2025] First test run, Model: Nov7, comparing to Nov5 w/ no DataSift integration
 - GEM version utilized: HMM augments
-- training time drastically cut (will record after more tinkering, this is the first run)
+- training time decreased by roughly 12 minutes
 - feature count decreased from 540+ to 242, over 50%...
 - model accuracy peaked at 0.83 actually, didn't expect that with the extensive feature elimination. All previous runs were stuck at 0.82
 - Mean Pathogenic False Negatives went from 5527 -> 5373 -> greater clinical risk balance
