@@ -1,5 +1,8 @@
 # DataSift
-# A Personal Research Helper Module designed to Optimize Binary Classifiers
+
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&duration=2500&pause=5000&color=81A1C1&width=800&height=50&lines=Sift+through+high-dimensional+data%2C+retain+high-performance+data.)](https://git.io/typing-svg)
+
+# A Research Helper Module designed to Optimize Binary Classifiers
 
 A binary classifier efficiency enhancement tool. Optimizes feature selection within datasets for faster training and improved binary classification efficiency.
 
@@ -14,7 +17,7 @@ This is my own personal research helper module, and is more of a concept to help
 - ROC and PR were relatively identical at 0.8987 and 8952 compared to 0.8988 and 0.8956
 - F1 suffered slightly from 0.8040 -> 0.8036
 
-Summary: Despite removing over half of the features, Nov7 retained almost identical ROC/PR performance, with a minor shift toward higher pathogenic precision and lower recall. Statistically, this difference is within noise suggesting strong feature redundancy in Nov5 and excellent feature selection in Nov7. It's also worth noting that 55% of features being removed + nearly identical performance means simpler decision boundaries and improved speed, intepretability and overfit robustness. Combined with a further decrease in False Negative occurrence, Nov7 is far more suited for clinical deployability. 
+**DataSift demonstrates a practical and biologically meaningful approach to optimizing high-dimensional biomedical classifiers. Its ability to halve the feature set without loss of diagnostic accuracy highlights robust signal retention and improved clinical suitability.**
 
 
 ### *Algorithm Logic*
@@ -145,7 +148,7 @@ Confusion Matrix:
 [[35651  6123]
  [ 7264 27550]]
 ```
-
+Result Summary: Despite removing over half of the features, Nov7 retained almost identical ROC/PR performance, with a minor shift toward higher pathogenic precision and lower recall. Statistically, this difference is within noise suggesting strong feature redundancy in Nov5 and excellent feature selection in Nov7. It's also worth noting that 55% of features being removed + nearly identical performance means simpler decision boundaries and improved speed, intepretability and overfit robustness. Combined with a further decrease in False Negative occurrence, Nov7 is far more suited for clinical deployability. 
 
 
 Future improvements:
