@@ -8,16 +8,7 @@ A binary classifier efficiency enhancement tool. Optimizes feature selection wit
 
 This is my own personal research helper module, and is more of a concept to help my productivity and performance with GEM. This is meant to address high dimensionality in the bioinformatics field. In my case, it was meant to optimize the model-training pipeline for gene variant screening via extensive bioinformatics-based feature engineering.
 
-[Nov 8 2025] First test run, Model: Nov7, comparing to Nov5 w/ no DataSift integration
-- GEM version utilized: HMM augments
-- training time decreased by roughly 12 minutes
-- feature count decreased from 540+ to 242, over 50%...
-- model accuracy peaked at 0.83 actually, didn't expect that with the extensive feature elimination. All previous runs were stuck at 0.82
-- Mean Pathogenic False Negatives went from 5527 -> 5373 -> greater clinical risk balance
-- ROC and PR were relatively identical at 0.8987 and 8952 compared to 0.8988 and 0.8956
-- F1 suffered slightly from 0.8040 -> 0.8036
-
-**DataSift demonstrates a practical and biologically meaningful approach to optimizing high-dimensional biomedical classifiers. Its ability to halve the feature set without loss of diagnostic accuracy highlights robust signal retention and improved clinical suitability.**
+**DataSift demonstrates a practical and biologically meaningful approach to optimizing high-dimensional biomedical classifiers. Its ability to decrease the feature set without loss of diagnostic accuracy highlights robust signal retention and improved clinical suitability.** (see Nov5 (540+ features) vs. Nov7 (242 features) stat logs at the bottom)
 
 
 ### *Algorithm Logic*
