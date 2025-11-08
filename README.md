@@ -98,9 +98,9 @@ from xgboost import XGBClassifier  # can be any classifier you want with a featu
                                                             random_state=42)
 
 # Hyperparameter Optimization Below
-
 ```
 
+```python
 Nov5 Model stats
 Optimal Hyperparameters: {'n_estimators': 1674, 'max_depth': 10, 'learning_rate': 0.034561112430304776, 'subsample': 0.9212141915845736, 'colsample_bytree': 0.6016405698933265, 'colsample_bylevel': 0.9329109895929816, 'reg_alpha': 0.7001202050122113, 'reg_lambda': 3.1671750288760134, 'gamma': 1.0033930419124446, 'min_child_weight': 9, 'scale_pos_weight': 1.6075244983571118}
 Cross Validation Results: Mean ROC AUC: 0.8968, Mean PR AUC: 0.8927
@@ -121,8 +121,9 @@ weighted avg       0.82      0.82      0.82     76588
 Confusion Matrix:
 [[35308  6466]
  [ 7040 27774]]
+```
 
-
+```python
 Nov7 Model stats
 Optimal Hyperparameters: {'n_estimators': 1674, 'max_depth': 10, 'learning_rate': 0.034561112430304776, 'subsample': 0.9212141915845736, 'colsample_bytree': 0.6016405698933265, 'colsample_bylevel': 0.9329109895929816, 'reg_alpha': 0.7001202050122113, 'reg_lambda': 3.1671750288760134, 'gamma': 1.0033930419124446, 'min_child_weight': 9, 'scale_pos_weight': 1.6075244983571118}
 Cross Validation Results: Mean ROC AUC: 0.8970, Mean PR AUC: 0.8926
@@ -143,6 +144,7 @@ weighted avg       0.83      0.83      0.82     76588
 Confusion Matrix:
 [[35651  6123]
  [ 7264 27550]]
+```
 
 
 
